@@ -6,6 +6,7 @@ int sum_of_div ( int n )
       sum = sum + i;
   return sum;    
 }
+// a comment to test git
 void setup ()
 {
    int n = 50;

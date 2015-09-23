@@ -1,4 +1,4 @@
-//test
+//Better testing 
 ArrayList<IntList>  abundants = new ArrayList <IntList>();
 IntList tmp = new IntList();
 int sum_of_div ( int n )

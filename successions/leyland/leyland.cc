@@ -36,9 +36,10 @@ long leyland (int n )
 
 int main()
 {
-	int n; 
+	int n ; 
 	cin>>n;
-	cout<<leyland(n)<<endl;
+	for(int i=0;i<n;i++)
+		cout<<leyland(i+1)<<endl;
 
 	return 0;
 

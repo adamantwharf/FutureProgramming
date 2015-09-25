@@ -18,7 +18,7 @@ void setup ()
 {
    PImage image = loadImage("stallman.jpg"); 
    size( 610,400);
-     background(image);
+     background(0,50,50);
    int n = 10;
 
    int cont = 0;
@@ -50,15 +50,18 @@ void setup ()
      
      x += abundants.get(xi).get(abundants.get(xi).size() - 1 )/2.0 * scale;
      float y = abundants.get(xi).get(0)/2.0 * scale;
-     fill(0,255,0);
-     stroke(204,102,0);
+     fill(255,255,200);
+     noStroke();
      ellipse(x,y, abundants.get(xi).get(0) * scale ,abundants.get(xi).get(0) * scale);
      y += abundants.get(xi).get(0)/2.0* scale;
      
      for ( int i = 1 ; i < abundants.get(xi).size(); i ++ )
      {
-       fill(137,174,239); 
-       stroke(255);
+       int size = abundants.get(xi).size();
+       float a = map(abundants.get(xi).get(i),abundants.get(xi).get(1) 
+                 ,abundants.get(xi).get(size-2)*1.1,0,255);
+       fill(255,255-a,255-a); 
+       noStroke();
        y += abundants.get(xi).get(i)/2.0 * scale;
        println(y);
        ellipse(x, y , abundants.get(xi).get(i)* scale,abundants.get(xi).get(i)* scale);

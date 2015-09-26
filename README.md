@@ -6,19 +6,18 @@ Powered by [Jimmy Pulido](https://github.com/jiapulidoar)[Sebstian Chaves](https
 
 ##Installation
 
-    ```sh
+
     $ git clone https://github.com/adamantwharf/FutureProgramming.git
     $ cd FutureProgramming
-    ```
+
 ##Successions
 
     1. Layland Numbers
         
         Used for create the bionic eye. 
-        ![bionic eye](successions/leyland/eye.jpg)
+        ![Bionic Eye](/successions/leyland/eye.jpg)
         
     2. Abundants Numbers
     
         Graphic representation of succession. 
-        
-        ![Graphic](successions/num_abundantes/e.jpg)
+        ![Graphic](/successions/num_abundantes/e.jpg)

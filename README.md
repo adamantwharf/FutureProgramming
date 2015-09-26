@@ -1,7 +1,7 @@
 # FutureProgramming
 A repository for the *Oriented Objects Programming* course of the [National University of Colombia](http://www.unal.edu.co/).
 
-Powered by [Jimmy Pulido](https://github.com/jiapulidoar) [Sebstian Chaves](https://github.com/adamantwharf) [Laura Santos](https://github.com/lsfinite). 
+Powered by [Jimmy Pulido](https://github.com/jiapulidoar) [Sebstian Chaves] - (https://github.com/adamantwharf) - [Laura Santos](https://github.com/lsfinite). 
 
 
 ##Installation

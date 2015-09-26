@@ -16,7 +16,7 @@ Powered by [Jimmy Pulido](https://github.com/jiapulidoar)[Sebstian Chaves](https
         
         Used for create the bionic eye. 
         ![Bionic Eye](/successions/leyland/eye.jpg)
-        
+        ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
     2. Abundants Numbers
     
         Graphic representation of succession. 

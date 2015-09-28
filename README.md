@@ -16,10 +16,10 @@ Powered by [Jimmy Pulido](https://github.com/jiapulidoar) - [Sebstian Chaves] (h
   
 Used for create the bionic eye. 
     
-  <img src="/successions/leyland/eye.jpg" alt="Bionic Eye" width="250" height="250">
+  <script src="successions/leyland/leyland.js">  </script>
 
 ###Abundants Numbers
     
 Graphic representation of succession. 
 
-  <img src="/successions/num_abundantes/circles.png" alt="Graphic" width="350" height="250">
+  <script src="/successions/num_abundantes/abundant.js"> </script> 

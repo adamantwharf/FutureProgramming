@@ -15,14 +15,11 @@ Powered by [Jimmy Pulido](https://github.com/jiapulidoar) - [Sebstian Chaves] (h
 ###Layland Numbers
   
 Used for create the bionic eye. 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.8/p5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.8/addons/p5.dom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.8/addons/p5.sound.js"></script>
-
-<script src="/successions/leyland/leyland.js"> </script>
+    
+  <img src="/successions/leyland/eye.jpg" alt="Bionic Eye" width="250" height="250">
 
 ###Abundants Numbers
     
 Graphic representation of succession. 
 
-<script src="/successions/num_abundantes/abundant.js"> </script> 
+  <img src="/successions/num_abundantes/circles.png" alt="Graphic" width="350" height="250">

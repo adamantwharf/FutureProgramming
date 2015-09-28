@@ -2,8 +2,12 @@ IntList v;
 IntList enesimo;
 int pow(int n, int p)
 {
-      if(p==0) return 1;
-         else return n * pow(n,p-1);
+  if(p==0) return 1;
+    
+  else if ( p % 2 == 1 )
+    return n * pow(n,p-1);
+  int a = pow ( n , p%2);
+  return a * a;
 }
 
 IntList layland (int n)

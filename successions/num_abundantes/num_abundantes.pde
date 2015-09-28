@@ -16,9 +16,8 @@ int sum_of_div ( int n )
 // a comment to test git
 void setup ()
 {
-   PImage image = loadImage("stallman.jpg"); 
-   size( 610,400);
-     background(0,50,50);
+   size(576,442);
+   background(0,50,50);
    int n = 10;
 
    int cont = 0;
@@ -47,26 +46,30 @@ void setup ()
    float x = 0;
    for ( int xi = 0 ; xi < 6 ; xi ++ )
    {
-     
-     x += abundants.get(xi).get(abundants.get(xi).size() - 1 )/2.0 * scale;
-     float y = abundants.get(xi).get(0)/2.0 * scale;
+     float radOfSum = abundants.get(xi).get(abundants.get(xi).size() - 1 )/2.0;
+     x += radOfSum  * scale;
+     float radOfNumber = abundants.get(xi).get(0)/2.0;
+     float y =  radOfNumber * scale;
      fill(255,255,200);
      noStroke();
-     ellipse(x,y, abundants.get(xi).get(0) * scale ,abundants.get(xi).get(0) * scale);
-     y += abundants.get(xi).get(0)/2.0* scale;
+     ellipse(x,y, radOfNumber * 2 * scale ,radOfNumber * 2 * scale);
+     y += radOfNumber* scale;
      
      for ( int i = 1 ; i < abundants.get(xi).size(); i ++ )
      {
        int size = abundants.get(xi).size();
-       float a = map(abundants.get(xi).get(i),abundants.get(xi).get(1) 
-                 ,abundants.get(xi).get(size-2)*1.1,0,255);
+       float diamOfActual =abundants.get(xi).get(i);
+       float diamOfFirst = abundants.get(xi).get(1);
+       float diamOfLast = abundants.get(xi).get(size - 2 ) * 1.1;
+       float a = map(diamOfActual,diamOfFirst 
+                 ,diamOfLast,0,255);
        fill(255,255-a,255-a); 
        noStroke();
-       y += abundants.get(xi).get(i)/2.0 * scale;
-       println(y);
-       ellipse(x, y , abundants.get(xi).get(i)* scale,abundants.get(xi).get(i)* scale);
-       y += abundants.get(xi).get(i)/2.0 * scale;  
+       y += diamOfActual/2.0 * scale;
+       //println(y);
+       ellipse(x, y , diamOfActual* scale,diamOfActual* scale);
+       y += diamOfActual/2.0 * scale;  
      }
-     x += abundants.get(xi).get(abundants.get(xi).size() - 1 )/2.0 * scale;
+     x += radOfSum * scale;
    }
 }

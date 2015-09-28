@@ -22,4 +22,4 @@ Used for create the bionic eye.
     
 Graphic representation of succession. 
 
-  <img src="/successions/num_abundantes/e.jpg" alt="Graphic" width="350" height="250">
+  <img src="/successions/num_abundantes/circles.png" alt="Graphic" width="350" height="250">

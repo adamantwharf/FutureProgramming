@@ -6,7 +6,7 @@ int pow(int n, int p)
     
   else if ( p % 2 == 1 )
     return n * pow(n,p-1);
-  int a = pow ( n , p%2);
+  int a = pow ( n , p/2);
   return a * a;
 }
 

@@ -10,8 +10,8 @@ int num = 1;
 void draw ()
 {
   colorMode (HSB, 360, 100, 100);
-  background(90);
-  sequence.displayOne(num);
+  background(0);
+  sequence.display(num);
 
   
 }
@@ -21,8 +21,11 @@ void keyPressed() {
       num ++;
      
     } else if (keyCode == DOWN) {
-      num --;
+      if ( num != 1 )
+        num --;
     }
+    else
+      num = 1;
     clear();
   }
 }

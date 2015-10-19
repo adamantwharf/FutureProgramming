@@ -1,6 +1,6 @@
 class abundant_object 
 {
-  color hue = 100;
+  color hue = 200;
   int sum_of_div (int n )
   {
       int cont = 0;
@@ -11,7 +11,8 @@ class abundant_object
      }
      return cont;    
   }
-   int [] toArray(int n) {
+   int [] toArray(int n) 
+ {
     int[] seq = new int[n];
     for (int i=0; i<n; i++)
       seq[i] = compute(i+1);
@@ -43,6 +44,10 @@ class abundant_object
     }
     return div;
   }
+  void display_matrix (int num)
+  {
+    
+  }
   void display ( int num )
   {
      int terms = num;
@@ -63,11 +68,14 @@ class abundant_object
        x += map (abundants[1][i]/2, 0, wth, 0, width);
      //  println (x );
        float radious =map(abundants[0][i], 0, wth, 0, width);
-       ellipse ( x ,radious/2, radious, radious);
+       fill ( hue, map ( abundants [0][i], 0, abundants[0][terms-1], 0, 100),100);
+       //println ( abundants [0][i] + " 0 "  + abundants[0][terms-1] + " 0 360 MAPEO " +  map ( abundants [0][i], 0,  abundants[0][terms-1], 0, 360));
+       ellipse ( x ,radious/2 + mouseY, radious, radious);
        //float y = 2 * radious + map (abundants[i][0]/2, 0, wth, 0, 1000);
-       float y = radious + map(abundants[1][i]/2, 0, wth, 0, width);
+       float y = radious + map(abundants[1][i]/2, 0, wth, 0, width) + mouseY;
        //ellipse ( x ,y, abundants[i][0]/2, abundants[i][0]/2);
        radious =  map(abundants[1][i], 0, wth, 0, width);
+       fill ( hue + 130, map ( abundants [1][i], 0, abundants[1][terms-1], 0, 100) , 100);
        ellipse ( x ,y, radious, radious);
        x +=  map (abundants[1][i]/2, 0, wth, 0, width);
        //println (x );

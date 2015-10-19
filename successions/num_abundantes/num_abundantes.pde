@@ -8,10 +8,12 @@ int sum_of_div (int n )
 }
 void setup()
 {
-   int terms = 12;
+   size (1000,1000);
+   int terms = 16;
    int[][] abundants = new int[terms][2];
    int cont = 0;
    int number = 0; 
+   int wth=0;
    while (true)
    {
        number++;
@@ -22,6 +24,7 @@ void setup()
              abundants[cont][1]=divisors;
          //abundants.append (number);
          cont ++;
+         wth += divisors;
        }
        if (cont == terms)
          break;
@@ -31,4 +34,17 @@ void setup()
    {
       println (i + " " + abundants[i][0]+ " Divisors " + abundants[i][1] );
    }
+   println ( "wth "+ wth );
+   float x=0;
+   for (int i = 0 ; i < terms; i ++)
+   {
+     x += map (abundants[i][1]/2, 0, wth, 0, 1000);
+     println (x );
+     float radious = map(abundants[i][1], 0, wth, 0, 1000);
+     ellipse ( x ,radious/2, radious, radious);
+     //int y = abundants[i][1]/2;
+     x +=  map (abundants[i][1]/2, 0, wth, 0, 1000);
+     println (x );
+   }
+   
  }

@@ -1,5 +1,5 @@
 Leyland leyland;
-
+int value = 0; 
  int pow(int n, int p) //special pow 
  {
    if(p==0) return 1;
@@ -14,10 +14,20 @@ void setup() {
   size(400,400);
   colorMode(HSB, 360, 100, 100);
   leyland = new Leyland();
-  noLoop();
+  //noLoop();
 }
 
 void draw() {
   background(0);
   leyland.display(12);
+  leyland.sethue(value);
+  leyland.posy(mouseY);
+  leyland.posx(mouseX);
+}
+
+void mouseMoved() {
+  value = value + 1;
+  if (value > 360) {
+    value = 0;
+  }
 }

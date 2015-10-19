@@ -1,7 +1,18 @@
 class Leyland{
  
   color hue; 
+  int py;
+  int px;
   
+  void posy(int p)
+  {
+      py = p-height/2;
+  }
+  
+  void posx(int p)
+  {
+      px= p-width/2;
+  }
   Leyland()
   {
      sethue(180); 
@@ -52,8 +63,12 @@ class Leyland{
       float a = map (layr.get(i),lay.get(0),layr.get(0),lay.get(0),width+width/4);
       float b = map (lay.get(i),lay.get(0),layr.get(0),0,100);
       fill(hue,100,b);
-      noStroke();
-      ellipse(width/2,height/2,a,a);
+     
+      stroke(hue,100,b);
+      float x = width/2+px/(a/b);
+      float y = height/2+py/(a/b);
+
+      ellipse(x,y,a,a);
   }
   
   

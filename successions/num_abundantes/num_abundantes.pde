@@ -9,7 +9,7 @@ int sum_of_div (int n )
 void setup()
 {
    size (1000,1000);
-   int terms = 16;
+   int terms = 5;
    int[][] abundants = new int[terms][2];
    int cont = 0;
    int number = 0; 
@@ -42,7 +42,11 @@ void setup()
      println (x );
      float radious = map(abundants[i][1], 0, wth, 0, 1000);
      ellipse ( x ,radious/2, radious, radious);
-     //int y = abundants[i][1]/2;
+     //float y = 2 * radious + map (abundants[i][0]/2, 0, wth, 0, 1000);
+     float y = radious + map (abundants[i][0]/2, 0, wth, 0, 1000);
+     //ellipse ( x ,y, abundants[i][0]/2, abundants[i][0]/2);
+     radious = map(abundants[i][0], 0, wth, 0, 1000);
+     ellipse ( x ,y, radious, radious);
      x +=  map (abundants[i][1]/2, 0, wth, 0, 1000);
      println (x );
    }

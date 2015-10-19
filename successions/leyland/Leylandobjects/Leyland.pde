@@ -3,15 +3,23 @@ class Leyland{
   color hue; 
   int py;
   int px;
-  
+  float c, d;
   void posy(int p)
   {
       py = p-height/2;
   }
   
+  void change()
+  {
+      float tmp = c;
+      c =d;
+      d = tmp;
+    
+  }
+  
   void posx(int p)
   {
-      px= p-width/2;
+      px = p-width/2;
   }
   Leyland()
   {
@@ -60,14 +68,25 @@ class Leyland{
     
     for(int i=0;i<lay.size();i++)
     {
-      float a = map (layr.get(i),lay.get(0),layr.get(0),lay.get(0),width+width/4);
+      float a = map (layr.get(i),lay.get(0),layr.get(0),lay.get(0),width);
       float b = map (lay.get(i),lay.get(0),layr.get(0),0,100);
       fill(hue,100,b);
-     
-      stroke(hue,100,b);
-      float x = width/2+px/(a/b);
-      float y = height/2+py/(a/b);
-
+      c=a;
+      d=b;
+      //noStroke();
+      stroke(hue,100,30);
+      float x = width/2+px/(c/d);
+      float y = height/2+py/(c/d);
+      
+      if(y>height)
+       y=height;
+       else if(y<0)
+       y=0;
+      if(x>width)
+        x=width;
+        else if(x<0)
+        x=0;
+      
       ellipse(x,y,a,a);
   }
   

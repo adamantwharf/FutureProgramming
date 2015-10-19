@@ -1,17 +1,17 @@
 abundant_object sequence;
 void setup()
 {
-  size (500,500 );
+  size (1000,1000);
   
   sequence = new abundant_object();
  
 }
-int num = 12;
+int num = 1;
 void draw ()
 {
   colorMode (HSB, 360, 100, 100);
   background(90);
-  sequence.display(num);
+  sequence.displayOne(num);
 
   
 }

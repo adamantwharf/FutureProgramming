@@ -2,11 +2,27 @@ abundant_object sequence;
 void setup()
 {
   size (500,500 );
-  colorMode (HSB, 360, 100, 100);
+  
   sequence = new abundant_object();
-  noLoop();
+ 
 }
+int num = 12;
 void draw ()
 {
-  sequence.display(12);
+  colorMode (HSB, 360, 100, 100);
+  background(90);
+  sequence.display(num);
+
+  
+}
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      num ++;
+     
+    } else if (keyCode == DOWN) {
+      num --;
+    }
+    clear();
+  }
 }

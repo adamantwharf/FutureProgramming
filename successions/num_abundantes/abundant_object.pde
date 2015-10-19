@@ -16,11 +16,12 @@ class abundant_object
       int e;
       float radio;
       float radio_sum;
+      //text ("hola", 200, 200);
       if (sum_of_div(num) >(num) )
       {
         println("abundant");
         e = 500 / (sum_of_div(num)*2);
-        println (e);
+        println (num);
         radio =num * e;
         radio_sum =sum_of_div (num) * e ;
         fill ( hue, 100, map (radio, 0 , radio_sum, 0 , 100));
@@ -32,7 +33,7 @@ class abundant_object
       {
         println("Not abundant");
         e = 500 / (num*2);
-        println (e);
+        println (num);
         radio =num * e;
         radio_sum =sum_of_div (num) * e ;
         fill ( hue, 100, map (radio, 0 , num, 0 , 100));

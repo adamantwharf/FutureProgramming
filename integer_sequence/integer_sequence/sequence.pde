@@ -56,6 +56,25 @@ abstract class Sequence {
    * Warning: Should be implemented here in the super class!
    */
   void lineChart(int n) {
+    float xpos=0;
+    float ypos=height;
+    int nth=1;
+    int[] seq=  toArray(n);
+  //  println(seq);
+    for ( int i = 0; i < n ; i ++)
+    {
+      float xpos1=  map (nth,0,n, 0, width);
+      nth ++;
+      float ypos1 = map ( seq[i],0,seq[n-1], height,0);
+      ellipse ( xpos1, ypos1, 6, 6);
+      stroke (255);
+      if ( i == 0)
+          stroke(0);    
+      line (xpos,ypos,xpos1,ypos1); 
+      xpos=xpos1;
+      ypos=ypos1;
+     // println(xpos + " " + ypos);*/
+    }
     //TODO misssing implementation
   }
   
@@ -66,75 +85,5 @@ abstract class Sequence {
    */
   void curveFitting(int n) {
     //TODO misssing implementation
-  }
-}
-class Abundant extends Sequence{
-  String author()
-  {
-     return "noname"; 
-  }
-  String description()
-  {
-    return "something";
-  }
-  
-  int sum_of_div (int n )
-  {
-     int cont = 0;
-     for ( int i = 1 ; i < n ; i ++)
-       if ( n % i == 0)
-         cont += i;
-     return cont;
-  }
-  int compute ( int n )
-  {
-     int cont = 0;
-     int number = 0;
-     while (true)
-     {
-       number++;
-       int divisors = sum_of_div (number);
-       if ( divisors > number )
-       {
-            cont ++;
-       }
-       if (cont == n)
-         break;
-     }
-     return number;
-  }
-  int[] sumDivArray ( int n )
-  {
-    int [] div = new int[n];
-    for ( int i = 0 ; i < n ; i ++ )
-    {
-      div[i] = sum_of_div(compute(i+1));
-    }
-    return div;
-  }
-  void display()
-  {
-     int terms = 5;
-     int abundants[][] = new int[2][terms];
-     abundants[0] = toArray(terms);
-     abundants[1] = sumDivArray ( terms);
-     float wth = 0;
-     for (int i = 0 ; i < terms; i ++)
-       wth+= abundants[1][i];
-     float x=0;
-     for (int i = 0 ; i < terms; i ++)
-     {
-       x += map (abundants[1][i]/2, 0, wth, 0, 1000);
-     //  println (x );
-       float radious = map(abundants[1][i], 0, wth, 0, 1000);
-       ellipse ( x ,radious/2, radious, radious);
-       //float y = 2 * radious + map (abundants[i][0]/2, 0, wth, 0, 1000);
-       float y = radious + map (abundants[0][i]/2, 0, wth, 0, 1000);
-       //ellipse ( x ,y, abundants[i][0]/2, abundants[i][0]/2);
-       radious = map(abundants[0][i], 0, wth, 0, 1000);
-       ellipse ( x ,y, radious, radious);
-       x +=  map (abundants[1][i]/2, 0, wth, 0, 1000);
-       //println (x );
-     }
   }
 }

@@ -1,5 +1,4 @@
 int n = 7;
- 
 IntList arr;
 IntList  num_div (int n ){
   arr = new IntList() ;
@@ -57,33 +56,25 @@ void draw()
   int s = arr.size();
   printArray (arr);
   println ( arr.size() );
-  if ( s%2 == 1)
-  {
-    println ( " los divisores son impares ");
+  if ( s%2 == 1){
     base = sqrt(width * height / n+70);
     h = base;
   }
-  if ( s % 2 == 0)
-  {
-    println ("los divisores son pares");
+  if ( s % 2 == 0){
     base = width * 1.0 / arr.get(s/ 2 - 1);
-    println ( 4/3);
     h=height * 1.0 / arr.get( (s / 2));
-    println ( " base " + base + "h " + h );
- }
-  
-
+   }
+   
   for ( int i = 1; i <= n ; i ++)
   {
     fill (0);
-    if ( ! is_comp(i))
-     { fill (100,50, map ( i , 0 , n , 0 , 100));
+    if ( ! is_comp(i)){ 
+       fill (100,50, map ( i , 0 , n , 0 , 100));
        println ( "no" + i );
      }
-    println ( "xpos " + xpos + "ypos " + ypos); 
     rect ( xpos, ypos, base, h);
     if ( xpos < width )
-    { xpos = xpos + base;}
+     xpos = xpos + base;
       
     if ( xpos == width)
     {

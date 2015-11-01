@@ -38,6 +38,7 @@ class Leyland{
   
   IntList compute(int n)
   {
+    int n2 =n;
      IntList enesimo, v;
      if (n>13)
       n=13;
@@ -54,9 +55,46 @@ class Leyland{
      //println(v);
      v.sort();
      //println(v);
-     for(int i=0;i<n;i++)
+     for(int i=0;i<n2;i++)
         enesimo.append(v.get(i));
      return enesimo;
+    
+  }
+  
+  int enesimo(int n)
+  {
+    IntList na = compute(n);
+    return na.get(n-1);
+  }
+  
+  void barChart(int n)
+  {
+      IntList lay = compute(n);
+      int count = 0;
+      for(int i=0; i<n;i++)
+      {
+          float wid = map (lay.get(i), lay.get(0),lay.get(n-1),lay.get(0),width);
+          stroke(hue,100,30);
+          rect(0,(height/n)*count,wid,height/n);
+          count++;
+      }   
+  }
+  
+  void lineChart(int n)
+  {
+     IntList lay = compute(n);
+     for(int i=0;i<n-1;i++)
+     {
+         //println(lay);
+         float x = map (i+1, 0,n,0,width); 
+         float y = map (lay.get(i), 0,lay.get(n-1),height,0);
+         float x2 = map (i+2, 0,n,0,width); 
+         float y2 = map (lay.get(i+1), 0,lay.get(n-1),height,0);
+         stroke(250);
+         line(x,y,x2,y2);
+         ellipse(x,y,6,6);
+         
+     }
     
   }
   

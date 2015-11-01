@@ -20,7 +20,10 @@ void setup() {
 
 void draw() {
   background(10);
-  leyland.display(12);
+  //leyland.display(10);
+  //leyland.barChart(10);
+  leyland.lineChart(12);
+  println(leyland.compute(13));
   leyland.sethue(value);
   leyland.posy(mouseY);
   leyland.posx(mouseX);
@@ -28,10 +31,7 @@ void draw() {
 }
 
 void mouseMoved() {
-  value = value + 1;
-  if (value > 360) {
-    value = 0;
-  }
+  value = (value + 1) % 360;
 }
 
 void keyReleased()

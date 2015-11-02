@@ -1,4 +1,4 @@
-int n = 7;
+int n = 20*20;
 IntList arr;
 IntList  num_div (int n ){
   arr = new IntList() ;
@@ -54,32 +54,36 @@ void draw()
   float xpos=0, ypos = 0; 
   IntList arr = num_div (n);
   int s = arr.size();
-  printArray (arr);
-  println ( arr.size() );
+ // printArray (arr);
+ // println ( arr.size() );
+  int row =0, col=0; 
   if ( s%2 == 1){
-    base = sqrt(width * height / n+70);
+    base = sqrt(width * height / n);
     h = base;
+    row = col = (int)sqrt ( n );
   }
+  
   if ( s % 2 == 0){
-    base = width * 1.0 / arr.get(s/ 2 - 1);
-    h=height * 1.0 / arr.get( (s / 2));
-   }
-   
-  for ( int i = 1; i <= n ; i ++)
+    base = (float)width / arr.get(s/ 2 - 1);
+    h= (float)height / arr.get( (s / 2));
+    col =  arr.get(s/2 -1 ) ;
+    row = arr.get ( s/2);
+ }
+ int cont=1;
+  for ( int i = 1; i <= row ; i ++)
   {
-    fill (0);
-    if ( ! is_comp(i)){ 
-       fill (100,50, map ( i , 0 , n , 0 , 100));
-       println ( "no" + i );
-     }
-    rect ( xpos, ypos, base, h);
-    if ( xpos < width )
-     xpos = xpos + base;
-      
-    if ( xpos == width)
+    xpos = 0;
+    for ( int j = 1 ; j <= col ; j ++ )
     {
-      xpos = 0;
-      ypos = ypos + h;
+      fill (0);
+      if ( ! is_comp(cont)){ 
+         fill (100,50, map (cont , 0 , n , 0 , 100));
+         println ( "no " + i );
+       }
+      rect ( xpos, ypos, base, h);
+      cont ++;
+      xpos = xpos + base;
     }
+    ypos = ypos + h;
   }
 }
